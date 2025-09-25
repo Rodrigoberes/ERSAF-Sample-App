@@ -1,16 +1,40 @@
-# ersaf_sampleapp
-
-A new Flutter project.
+# ERSAF SAMPLE APP
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+A simple Flutter app per la gestione degli utenti, con operazioni CRUD (Create, Read, Update, Delete). I dati degli utenti sono salvati localmente in un file JSON
 
-A few resources to get you started if this is your first Flutter project:
+### Run the code
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+# Run in iOS-Android Emulator
+flutter run
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Lint and test the code
+
+Before submit a Merge Request you need to make sure that the following commands are executed and completes:
+
+```bash
+# Make sure to use the Dart code formatter to have a unified style
+dart fix --apply
+
+# Make sure that there are no analyzer errors
+flutter analyze
+
+# Check for more lint issues
+flutter pub run dart_code_metrics:metrics lib
+
+# Check the tests pass
+flutter test
+```
+
+## Code generation
+
+### Generate freezed/JSON/mock classes
+
+To (re-)generate the Dart classes the following command could be used:
+
+```shell
+flutter pub run build_runner build --delete-conflicting-outputs
+```
