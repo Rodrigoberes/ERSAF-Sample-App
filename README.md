@@ -22,9 +22,6 @@ dart fix --apply
 # Make sure that there are no analyzer errors
 flutter analyze
 
-# Check for more lint issues
-flutter pub run dart_code_metrics:metrics lib
-
 # Check the tests pass
 flutter test
 ```
