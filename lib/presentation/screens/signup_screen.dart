@@ -240,7 +240,7 @@ class SignupScreenState extends State<SignupScreen> {
                           ),
                           TextButton(
                             onPressed: () {
-                              Navigator.pop(context);
+                              Navigator.pushReplacementNamed(context, RouteGenerator.login);
                             },
                             child: const Text(
                               'Accedi',

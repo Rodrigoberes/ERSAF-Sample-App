@@ -22,6 +22,7 @@ class ProfileScreen extends StatelessWidget {
         return CupertinoPageScaffold(
           navigationBar: const CupertinoNavigationBar(
             middle: Text('Impostazioni'),
+            leading: SizedBox.shrink(),
           ),
           child: SafeArea(
             child: ListView(

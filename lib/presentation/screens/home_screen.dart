@@ -22,18 +22,18 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return CustomCupertinoPageScaffold(
-      title: 'ERSAF SAMPLE',
+      title: 'Home',
       child: BlocBuilder<RouteBloc, RouteState>(
-        builder: (context, state) {
-          final routes = state is RouteLoaded ? state.routes : <routemodel.Route>[];
+      builder: (context, state) {
+        final routes = state is RouteLoaded ? state.routes : <routemodel.Route>[];
 
-          return SafeArea(
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+        return SafeArea(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
                     // Welcome Section
                     Container(
                       padding: const EdgeInsets.all(24.0),

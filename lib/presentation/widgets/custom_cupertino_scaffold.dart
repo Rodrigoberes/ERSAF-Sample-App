@@ -16,6 +16,7 @@ class CustomCupertinoPageScaffold extends StatelessWidget {
         middle: Text(title),
         backgroundColor: CupertinoColors.white,
         border: const Border(),
+        leading: const SizedBox.shrink(),
       ),
       child: child,
     );
