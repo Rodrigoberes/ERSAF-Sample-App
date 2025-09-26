@@ -37,11 +37,6 @@ class LoginScreenState extends State<LoginScreen> {
     return null;
   }
 
-  @override
-  void initState() {
-    super.initState();
-    context.read<UserBloc>().add(LoadUsers());
-  }
 
   @override
   Widget build(BuildContext context) {

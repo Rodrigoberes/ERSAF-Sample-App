@@ -87,6 +87,22 @@ class ProfileScreen extends StatelessWidget {
                 ),
 
                 CupertinoListSection(
+                  header: const Text('CRUD utenti'),
+                  children: [
+                    CupertinoListTile(
+                      leading: const Icon(CupertinoIcons.group),
+                      title: const Text('Gestisci Utenti'),
+                      subtitle: const Text(
+                        'Aggiungi, modifica o elimina utenti',
+                      ),
+                      trailing: const CupertinoListTileChevron(),
+                      onTap: () {
+                        Navigator.pushNamed(context, '/user-management');
+                      },
+                    ),
+                  ],
+                ),
+                CupertinoListSection(
                   header: const Text('Info App'),
                   children: const [
                     CupertinoListTile(
@@ -99,29 +115,29 @@ class ProfileScreen extends StatelessWidget {
                 CupertinoListSection(
                   header: const Text('Azioni'),
                   children: [
-                    //CupertinoListTile(
-                    //leading: const Icon(CupertinoIcons.square_arrow_right),
-                    //title: const Text('Esci'),
-                    //subtitle: const Text('Disconnettiti dall\'app'),
-                    //onTap: () {
-                    //context.read<UserBloc>().add(LogoutUser());
-                    //Navigator.pushReplacementNamed(
-                    //  context,
-                    //   RouteGenerator.login,
-                    //  );
-                    // },
-                    //),
+                    CupertinoListTile(
+                      leading: const Icon(CupertinoIcons.square_arrow_right),
+                      title: const Text('Esci'),
+                      subtitle: const Text('Disconnettiti dall\'app'),
+                      onTap: () {
+                        context.read<UserBloc>().add(LogoutUser());
+                        Navigator.pushReplacementNamed(
+                          context,
+                          RouteGenerator.login,
+                        );
+                      },
+                    ),
                     CupertinoListTile(
                       leading: const Icon(
                         CupertinoIcons.delete,
                         color: CupertinoColors.destructiveRed,
                       ),
                       title: const Text(
-                        'Elimina Account',
+                        'Elimina Utenti',
                         style: TextStyle(color: CupertinoColors.destructiveRed),
                       ),
                       subtitle: const Text(
-                        'Elimina definitivamente il tuo account',
+                        'Elimina definitivamente gli utenti',
                       ),
                       onTap: () async {
                         final result = await showCupertinoDialog<bool>(
