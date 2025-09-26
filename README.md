@@ -48,7 +48,6 @@ L'applicazione si integra con un backend REST API sviluppato in **Go/Golang** co
 
 **Routes**: [Routes](https://transportbookingbackend.onrender.com/api/v1/routes)
 
-
 **Companies**: [Companies](https://transportbookingbackend.onrender.com/api/v1/companies)
 
 
