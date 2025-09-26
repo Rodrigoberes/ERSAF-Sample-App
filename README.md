@@ -41,6 +41,17 @@ L'applicazione si integra con un backend REST API sviluppato in **Go/Golang** co
 
 **Repository Backend**: [Link al repository Go backend](https://github.com/Rodrigoberes/TransportBookingBackend.git)
 
+
+**Swagger Docs**: [Swagger URL](https://transportbookingbackend.onrender.com/swagger/index.html)
+
+### 📱 Routes Utilizzati in questa versione
+
+**Routes**: [Routes](https://transportbookingbackend.onrender.com/api/v1/routes)
+
+
+**Companies**: [Companies](https://transportbookingbackend.onrender.com/api/v1/companies)
+
+
 ### 🏗️ Architettura Tecnica
 - **State Management**: BLoC Pattern
 - **Architettura**: Clean Architecture (Business/Presentation)
