@@ -1,4 +1,4 @@
-# 🚀 ERSAF Transport Booking App
+# 🚀 ERSAF Sample App
 
 Una applicazione Flutter completa per la gestione degli utenti con operazioni CRUD (Create, Read, Update, Delete). I dati degli utenti sono salvati localmente in un file JSON e l'utilizzo di una API golang che fa vedere una lista di viaggi Bus e companies (nei dettagli del viaggio). sviluppata con architettura clean e state management BLoC
 
@@ -141,14 +141,53 @@ flutter test
 
 ## 📱 Preview Applicazione
 
+### 📁 Struttura Assets Media
+Per aggiungere screenshot e GIF al README, organizza i file nella seguente struttura:
+
+```
+docs/
+├── screenshots/          # Screenshot delle schermate
+│   ├── login_screen.png
+│   ├── signup_screen.png
+│   ├── home_screen.png
+│   ├── transports_screen.png
+│   ├── profile_screen.png
+│   └── edit_profile_screen.png
+```
+
 ### Video Demo
-*Sezione riservata al video dimostrativo dell'app*
+[![Video Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://youtu.be/YOUR_VIDEO_ID)
+*Video dimostrativo completo delle funzionalità dell'app*
 
 ### Screenshots
-*Sezione riservata agli screenshot dell'applicazione*
+<div align="center">
+
+| Schermata Login | Schermata Registrazione | Dashboard Home |
+|:---------------:|:-----------------------:|:--------------:|
+| ![Login](assets/screenshots/login_screen.png) | ![Signup](assets/screenshots/signup_screen.png) | ![Home](assets/screenshots/home_screen.png) |
+
+| Schermata Trasporti | Schermata Profilo | Schermata Modifica |
+|:-------------------:|:-----------------:|:------------------:|
+| ![Transports](assets/screenshots/transports_screen.png) | ![Profile](assets/screenshots/profile_screen.png) | ![Edit](assets/screenshots/edit_profile_screen.png) |
+
+</div>
 
 ### GIF Animazioni
-*Sezione riservata alle GIF che mostrano le funzionalità principali*
+<div align="center">
+
+#### Navigazione App
+![App Navigation](docs/gifs/app_navigation.gif)
+*Navigazione tra le schermate principali*
+
+#### Ricerca Trasporti
+![Transport Search](docs/gifs/transport_search.gif)
+*Ricerca e filtraggio dei trasporti disponibili*
+
+#### Gestione Utente
+![User Management](docs/gifs/user_management.gif)
+*Registrazione, login e modifica profilo*
+
+</div>
 
 ## 🛠️ Tecnologie Utilizzate
 
