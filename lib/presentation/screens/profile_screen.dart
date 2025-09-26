@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../business/blocs/user/user_bloc.dart';
 import '../../routes/route_generator.dart';
+import 'user_management_screen.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<UserBloc, UserState>(
@@ -76,6 +82,7 @@ class ProfileScreen extends StatelessWidget {
                       subtitle: const Text('Aggiorna le tue informazioni'),
                       trailing: const CupertinoListTileChevron(),
                       onTap: () {
+                        debugPrint('Pushing EditUserScreen from profile');
                         Navigator.pushNamed(
                           context,
                           RouteGenerator.editUser,
@@ -87,17 +94,22 @@ class ProfileScreen extends StatelessWidget {
                 ),
 
                 CupertinoListSection(
-                  header: const Text('CRUD utenti'),
+                  header: const Text('Utenti'),
                   children: [
                     CupertinoListTile(
                       leading: const Icon(CupertinoIcons.group),
                       title: const Text('Gestisci Utenti'),
                       subtitle: const Text(
-                        'Aggiungi, modifica o elimina utenti',
+                        'read utenti, delete utenti',
                       ),
                       trailing: const CupertinoListTileChevron(),
                       onTap: () {
-                        Navigator.pushNamed(context, '/user-management');
+                        debugPrint('Pushing UserManagementScreen from profile');
+                        Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                            builder: (context) => const UserManagementScreen(),
+                          )
+                        );
                       },
                     ),
                   ],

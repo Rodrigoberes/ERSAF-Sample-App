@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../business/blocs/user/user_bloc.dart';
-import '../../routes/route_generator.dart';
 
-class UserManagementScreen extends StatelessWidget {
+class UserManagementScreen extends StatefulWidget {
   const UserManagementScreen({super.key});
 
+  @override
+  State<UserManagementScreen> createState() => _UserManagementScreenState();
+}
+
+class _UserManagementScreenState extends State<UserManagementScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,14 +17,6 @@ class UserManagementScreen extends StatelessWidget {
         title: const Text('Gestione Utenti'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: () {
-              Navigator.pushNamed(context, RouteGenerator.addUser);
-            },
-          ),
-        ],
       ),
       body: BlocBuilder<UserBloc, UserState>(
         builder: (context, state) {
@@ -29,9 +24,7 @@ class UserManagementScreen extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           } else if (state is UserLoaded) {
             if (state.users.isEmpty) {
-              return const Center(
-                child: Text('Nessun utente trovato'),
-              );
+              return const Center(child: Text('Nessun utente trovato'));
             }
             return ListView.builder(
               padding: const EdgeInsets.all(16.0),
@@ -55,16 +48,6 @@ class UserManagementScreen extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         IconButton(
-                          icon: const Icon(Icons.edit, color: Colors.blue),
-                          onPressed: () {
-                            Navigator.pushNamed(
-                              context,
-                              RouteGenerator.editUser,
-                              arguments: user,
-                            );
-                          },
-                        ),
-                        IconButton(
                           icon: const Icon(Icons.delete, color: Colors.red),
                           onPressed: () async {
                             final userBloc = context.read<UserBloc>();
@@ -77,11 +60,13 @@ class UserManagementScreen extends StatelessWidget {
                                 ),
                                 actions: [
                                   TextButton(
-                                    onPressed: () => Navigator.pop(context, false),
+                                    onPressed: () =>
+                                        Navigator.pop(context, false),
                                     child: const Text('Annulla'),
                                   ),
                                   TextButton(
-                                    onPressed: () => Navigator.pop(context, true),
+                                    onPressed: () =>
+                                        Navigator.pop(context, true),
                                     style: TextButton.styleFrom(
                                       foregroundColor: Colors.red,
                                     ),

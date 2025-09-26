@@ -56,18 +56,20 @@ class SignupScreenState extends State<SignupScreen> {
     return null;
   }
 
-  @override
-  void initState() {
-    super.initState();
-    context.read<UserBloc>().add(LoadUsers());
-  }
+  // @override
+  //void initState() {
+  //super.initState();
+  // context.read<UserBloc>().add(LoadUsers());
+  // }
 
   @override
   Widget build(BuildContext context) {
     return BlocListener<UserBloc, UserState>(
       listener: (context, state) {
-        if (state is UserLoaded && state.currentUser != null) {
-          Navigator.pushReplacementNamed(context, RouteGenerator.main);
+        if (state is UserError) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(state.message), backgroundColor: Colors.red),
+          );
         }
       },
       child: BlocBuilder<UserBloc, UserState>(
@@ -79,12 +81,18 @@ class SignupScreenState extends State<SignupScreen> {
               elevation: 0,
               leading: IconButton(
                 icon: const Icon(Icons.arrow_back, color: Color(0xFF667EEA)),
-                onPressed: () => Navigator.pushReplacementNamed(context, RouteGenerator.onboarding),
+                onPressed: () => Navigator.pushReplacementNamed(
+                  context,
+                  RouteGenerator.onboarding,
+                ),
               ),
             ),
             body: SafeArea(
               child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 32,
+                  vertical: 16,
+                ),
                 child: Form(
                   key: _formKey,
                   child: Column(
@@ -137,7 +145,9 @@ class SignupScreenState extends State<SignupScreen> {
                         obscureText: !_isPasswordVisible,
                         suffixIcon: IconButton(
                           icon: Icon(
-                            _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                            _isPasswordVisible
+                                ? Icons.visibility
+                                : Icons.visibility_off,
                             color: Colors.grey.shade600,
                           ),
                           onPressed: () {
@@ -157,29 +167,36 @@ class SignupScreenState extends State<SignupScreen> {
                               onPressed: state is UserLoading
                                   ? null
                                   : () {
-                                      if (_formKey.currentState?.validate() ?? false) {
+                                      if (_formKey.currentState?.validate() ??
+                                          false) {
                                         if (state is UserLoaded) {
                                           final email = _emailController.text;
-                                          final password = _passwordController.text;
+                                          final password =
+                                              _passwordController.text;
 
                                           // Check if email already exists
-                                          final existingUser = state.users.firstWhere(
-                                            (u) => u.email == email,
-                                            orElse: () => User(
-                                              uid: '',
-                                              name: '',
-                                              surname: '',
-                                              email: '',
-                                              passwordHash: '',
-                                              createdAt: DateTime.now(),
-                                              updatedAt: DateTime.now(),
-                                            ),
-                                          );
+                                          final existingUser = state.users
+                                              .firstWhere(
+                                                (u) => u.email == email,
+                                                orElse: () => User(
+                                                  uid: '',
+                                                  name: '',
+                                                  surname: '',
+                                                  email: '',
+                                                  passwordHash: '',
+                                                  createdAt: DateTime.now(),
+                                                  updatedAt: DateTime.now(),
+                                                ),
+                                              );
 
                                           if (existingUser.uid.isNotEmpty) {
-                                            ScaffoldMessenger.of(context).showSnackBar(
+                                            ScaffoldMessenger.of(
+                                              context,
+                                            ).showSnackBar(
                                               const SnackBar(
-                                                content: Text('Email già registrata'),
+                                                content: Text(
+                                                  'Email già registrata',
+                                                ),
                                                 backgroundColor: Colors.red,
                                               ),
                                             );
@@ -191,24 +208,32 @@ class SignupScreenState extends State<SignupScreen> {
                                             name: _nameController.text,
                                             surname: _surnameController.text,
                                             email: email,
-                                            passwordHash: User.hashPassword(password),
+                                            passwordHash: User.hashPassword(
+                                              password,
+                                            ),
                                             createdAt: DateTime.now(),
                                             updatedAt: DateTime.now(),
                                           );
 
-                                          context.read<UserBloc>().add(RegisterUser(newUser));
+                                          context.read<UserBloc>().add(
+                                            RegisterUser(newUser),
+                                          );
                                         }
                                       }
                                     },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color(0xFF667EEA),
                                 foregroundColor: Colors.white,
-                                padding: const EdgeInsets.symmetric(vertical: 16),
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 16,
+                                ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                                 elevation: 4,
-                                shadowColor: Colors.black.withValues(alpha: 0.2),
+                                shadowColor: Colors.black.withValues(
+                                  alpha: 0.2,
+                                ),
                               ),
                               child: state is UserLoading
                                   ? const SizedBox(
@@ -216,7 +241,10 @@ class SignupScreenState extends State<SignupScreen> {
                                       width: 20,
                                       child: CircularProgressIndicator(
                                         strokeWidth: 2,
-                                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                              Colors.white,
+                                            ),
                                       ),
                                     )
                                   : const Text(
@@ -240,7 +268,10 @@ class SignupScreenState extends State<SignupScreen> {
                           ),
                           TextButton(
                             onPressed: () {
-                              Navigator.pushReplacementNamed(context, RouteGenerator.login);
+                              Navigator.pushReplacementNamed(
+                                context,
+                                RouteGenerator.login,
+                              );
                             },
                             child: const Text(
                               'Accedi',
@@ -279,7 +310,10 @@ class SignupScreenState extends State<SignupScreen> {
       style: const TextStyle(color: Colors.black87),
       decoration: InputDecoration(
         labelText: label,
-        labelStyle: const TextStyle(color: Colors.grey, fontWeight: FontWeight.w500),
+        labelStyle: const TextStyle(
+          color: Colors.grey,
+          fontWeight: FontWeight.w500,
+        ),
         hintText: label,
         hintStyle: TextStyle(color: Colors.grey.shade400),
         prefixIcon: Icon(icon, color: Colors.grey.shade600),
@@ -298,7 +332,10 @@ class SignupScreenState extends State<SignupScreen> {
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(color: Color(0xFF667EEA), width: 2),
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 16,
+        ),
         errorStyle: const TextStyle(color: Colors.red),
       ),
       validator: validator,

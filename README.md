@@ -152,7 +152,7 @@ flutter test
 ## 📱 Preview Applicazione
 
 ### Video Demo
-[Video Demo](https://drive.google.com/file/d/1X1VSq9ioD_AwideRlkSMd2ciTFxYQ_CM/view?usp=drive_link)
+[Video Demo](https://drive.google.com/file/d/1Hr5nlIKGW93IZM_QrSEIeCqgJD194ZMn/view?usp=drive_link)
 *Video dimostrativo completo delle funzionalità dell'app*
 
 ### Screenshots

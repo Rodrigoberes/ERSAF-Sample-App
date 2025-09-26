@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../business/models/route.dart' as route_model;
-import '../presentation/screens/add_user_screen.dart';
 import '../presentation/screens/edit_user_screen.dart';
 import '../presentation/screens/forgot_password_screen.dart';
 import '../presentation/screens/home_screen.dart';
@@ -21,7 +20,6 @@ class RouteGenerator {
   static const String signup = '/signup';
   static const String main = '/main';
   static const String home = '/home';
-  static const String addUser = '/add-user';
   static const String editUser = '/edit-user';
   static const String userManagement = '/user-management';
   static const String transports = '/transports';
@@ -43,8 +41,6 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const MainScreen());
       case home:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
-      case addUser:
-        return MaterialPageRoute(builder: (_) => const AddUserScreen());
       case editUser:
         final user = settings.arguments as dynamic;
         return MaterialPageRoute(builder: (_) => EditUserScreen(user: user));

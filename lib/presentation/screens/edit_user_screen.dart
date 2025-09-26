@@ -176,6 +176,7 @@ class EditUserScreenState extends State<EditUserScreen> {
                               backgroundColor: Colors.green,
                             ),
                           );
+                          debugPrint('Popping from EditUserScreen to profile');
                           Navigator.pop(context); // Go back to profile screen
                         },
                         style: ElevatedButton.styleFrom(
