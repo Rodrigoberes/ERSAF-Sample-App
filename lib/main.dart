@@ -42,6 +42,7 @@ void main() async {
       ),
     ],
     child: MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Transport Booking',
       theme: ThemeData(
         useMaterial3: true,

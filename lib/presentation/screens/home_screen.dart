@@ -137,7 +137,7 @@ class HomeScreenState extends State<HomeScreen> {
                     const SizedBox(height: 32),
 
                     // Recently Viewed Routes
-                    _buildSectionTitle('Percorsi Visti Recentemente'),
+                    _buildSectionTitle('Visti Recentemente'),
                     if (routes.isEmpty)
                       Container(
                         height: 180,
@@ -177,7 +177,7 @@ class HomeScreenState extends State<HomeScreen> {
                     const SizedBox(height: 32),
 
                     // Favorite Routes
-                    _buildSectionTitle('Percorsi Preferiti'),
+                    _buildSectionTitle('Preferiti'),
                     Container(
                       padding: const EdgeInsets.all(20.0),
                       decoration: BoxDecoration(

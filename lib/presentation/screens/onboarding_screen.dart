@@ -32,7 +32,7 @@ class OnboardingScreen extends StatelessWidget {
               const SizedBox(height: 32),
               // Title
               const Text(
-                'Welcome to Transport Booking',
+                'Benvenuto in Transport Booking',
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
@@ -44,7 +44,7 @@ class OnboardingScreen extends StatelessWidget {
               const SizedBox(height: 16),
               // Subtitle
               Text(
-                'Your journey starts here. Book transportation easily and securely.',
+                'Il tuo viaggio inizia qui. Prenota trasporti facilmente e in sicurezza.',
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey.shade600,
@@ -76,7 +76,7 @@ class OnboardingScreen extends StatelessWidget {
                         shadowColor: Colors.black.withValues(alpha: 0.2),
                       ),
                       child: const Text(
-                        'Login',
+                        'Accedi',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
@@ -106,7 +106,7 @@ class OnboardingScreen extends StatelessWidget {
                         ),
                       ),
                       child: const Text(
-                        'Sign Up',
+                        'Registrati',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,

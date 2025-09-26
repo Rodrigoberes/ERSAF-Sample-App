@@ -32,7 +32,7 @@ class EditUserScreenState extends State<EditUserScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
-          _isEditing ? 'Edit Profile' : 'Profile',
+          _isEditing ? 'Modifica Profilo' : 'Profilo',
           style: const TextStyle(
             color: Color(0xFF2D3748),
             fontWeight: FontWeight.bold,
@@ -51,7 +51,7 @@ class EditUserScreenState extends State<EditUserScreen> {
                 });
               },
               child: const Text(
-                'Edit',
+                'Modifica',
                 style: TextStyle(
                   color: Color(0xFF667EEA),
                   fontWeight: FontWeight.w600,
@@ -68,7 +68,7 @@ class EditUserScreenState extends State<EditUserScreen> {
             children: [
               const SizedBox(height: 20),
               const Text(
-                'Personal Information',
+                'Informazioni Personali',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -77,14 +77,14 @@ class EditUserScreenState extends State<EditUserScreen> {
               ),
               const SizedBox(height: 32),
               _buildInfoField(
-                label: 'First Name',
+                label: 'Nome',
                 value: _isEditing ? null : widget.user.name,
                 controller: _isEditing ? _nameController : null,
                 icon: Icons.person,
               ),
               const SizedBox(height: 16),
               _buildInfoField(
-                label: 'Last Name',
+                label: 'Cognome',
                 value: _isEditing ? null : widget.user.surname,
                 controller: _isEditing ? _surnameController : null,
                 icon: Icons.person,
@@ -98,14 +98,14 @@ class EditUserScreenState extends State<EditUserScreen> {
               ),
               const SizedBox(height: 16),
               _buildInfoField(
-                label: 'User ID',
+                label: 'UID',
                 value: widget.user.uid,
                 icon: Icons.perm_identity,
                 readOnly: true,
               ),
               const SizedBox(height: 16),
               _buildInfoField(
-                label: 'Account Created',
+                label: 'Account Creato',
                 value:
                     '${widget.user.createdAt.day}/${widget.user.createdAt.month}/${widget.user.createdAt.year} ${widget.user.createdAt.hour}:${widget.user.createdAt.minute.toString().padLeft(2, '0')}:${widget.user.createdAt.second.toString().padLeft(2, '0')}',
                 icon: Icons.calendar_today,
@@ -113,7 +113,7 @@ class EditUserScreenState extends State<EditUserScreen> {
               ),
               const SizedBox(height: 16),
               _buildInfoField(
-                label: 'Last Updated',
+                label: 'Ultimo Aggiornamento',
                 value:
                     '${widget.user.updatedAt.day}/${widget.user.updatedAt.month}/${widget.user.updatedAt.year} ${widget.user.updatedAt.hour}:${widget.user.updatedAt.minute.toString().padLeft(2, '0')}:${widget.user.updatedAt.second.toString().padLeft(2, '0')}',
                 icon: Icons.update,
@@ -140,7 +140,7 @@ class EditUserScreenState extends State<EditUserScreen> {
                           ),
                         ),
                         child: const Text(
-                          'Cancel',
+                          'Annulla',
                           style: TextStyle(
                             color: Colors.grey,
                             fontWeight: FontWeight.w600,
@@ -172,7 +172,7 @@ class EditUserScreenState extends State<EditUserScreen> {
                           });
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
-                              content: Text('Profile updated successfully'),
+                              content: Text('Profilo aggiornato con successo'),
                               backgroundColor: Colors.green,
                             ),
                           );
@@ -189,7 +189,7 @@ class EditUserScreenState extends State<EditUserScreen> {
                           shadowColor: Colors.black.withValues(alpha: 0.2),
                         ),
                         child: const Text(
-                          'Save',
+                          'Salva',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
@@ -248,7 +248,7 @@ class EditUserScreenState extends State<EditUserScreen> {
         ),
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return 'Please enter $label';
+            return 'Inserisci $label';
           }
           return null;
         },

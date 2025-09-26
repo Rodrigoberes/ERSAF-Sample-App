@@ -18,21 +18,21 @@ class LoginScreenState extends State<LoginScreen> {
 
   String? _validateEmail(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter an email';
+      return 'Inserisci un indirizzo email';
     }
     final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
     if (!emailRegex.hasMatch(value)) {
-      return 'Please enter a valid email';
+      return 'Inserisci un indirizzo email valido';
     }
     return null;
   }
 
   String? _validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter a password';
+      return 'Inserisci una password';
     }
     if (value.length < 6) {
-      return 'Password must be at least 6 characters';
+      return 'La password deve essere di almeno 6 caratteri';
     }
     return null;
   }
@@ -75,7 +75,7 @@ class LoginScreenState extends State<LoginScreen> {
                 children: [
                   const SizedBox(height: 40),
                   const Text(
-                    'Welcome Back',
+                    'Bentornato',
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
@@ -84,7 +84,7 @@ class LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Sign in to continue',
+                    'Accedi per continuare',
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.grey.shade600,
@@ -125,7 +125,7 @@ class LoginScreenState extends State<LoginScreen> {
                         Navigator.pushNamed(context, RouteGenerator.forgotPassword);
                       },
                       child: const Text(
-                        'Forgot Password?',
+                        'Password dimenticata?',
                         style: TextStyle(
                           color: Color(0xFF667EEA),
                           fontWeight: FontWeight.w500,
@@ -171,7 +171,7 @@ class LoginScreenState extends State<LoginScreen> {
                                   ),
                                 )
                               : const Text(
-                                  'Login',
+                                  'Accedi',
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w600,
@@ -186,7 +186,7 @@ class LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Don't have an account? ",
+                        'Non hai un account? ',
                         style: TextStyle(color: Colors.grey.shade600),
                       ),
                       TextButton(
@@ -194,7 +194,7 @@ class LoginScreenState extends State<LoginScreen> {
                           Navigator.pushNamed(context, RouteGenerator.signup);
                         },
                         child: const Text(
-                          'Sign Up',
+                          'Registrati',
                           style: TextStyle(
                             color: Color(0xFF667EEA),
                             fontWeight: FontWeight.w600,

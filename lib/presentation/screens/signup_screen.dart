@@ -23,14 +23,14 @@ class SignupScreenState extends State<SignupScreen> {
 
   String? _validateName(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your name';
+      return 'Inserisci il tuo nome';
     }
     return null;
   }
 
   String? _validateSurname(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your surname';
+      return 'Inserisci il tuo cognome';
     }
     return null;
   }
@@ -92,7 +92,7 @@ class SignupScreenState extends State<SignupScreen> {
                     children: [
                       const SizedBox(height: 20),
                       const Text(
-                        'Create Account',
+                        'Crea Account',
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
@@ -101,7 +101,7 @@ class SignupScreenState extends State<SignupScreen> {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Join us today',
+                        'Unisciti a noi oggi',
                         style: TextStyle(
                           fontSize: 18,
                           color: Colors.grey.shade600,
@@ -110,14 +110,14 @@ class SignupScreenState extends State<SignupScreen> {
                       const SizedBox(height: 32),
                       _buildTextField(
                         controller: _nameController,
-                        label: 'First Name',
+                        label: 'Nome',
                         icon: Icons.person,
                         validator: _validateName,
                       ),
                       const SizedBox(height: 16),
                       _buildTextField(
                         controller: _surnameController,
-                        label: 'Last Name',
+                        label: 'Cognome',
                         icon: Icons.person,
                         validator: _validateSurname,
                       ),
@@ -179,7 +179,7 @@ class SignupScreenState extends State<SignupScreen> {
                                           if (existingUser.uid.isNotEmpty) {
                                             ScaffoldMessenger.of(context).showSnackBar(
                                               const SnackBar(
-                                                content: Text('Email already registered'),
+                                                content: Text('Email già registrata'),
                                                 backgroundColor: Colors.red,
                                               ),
                                             );
@@ -220,7 +220,7 @@ class SignupScreenState extends State<SignupScreen> {
                                       ),
                                     )
                                   : const Text(
-                                      'Sign Up',
+                                      'Registrati',
                                       style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w600,
@@ -235,7 +235,7 @@ class SignupScreenState extends State<SignupScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'Already have an account? ',
+                            'Hai già un account? ',
                             style: TextStyle(color: Colors.grey.shade600),
                           ),
                           TextButton(
@@ -243,7 +243,7 @@ class SignupScreenState extends State<SignupScreen> {
                               Navigator.pop(context);
                             },
                             child: const Text(
-                              'Login',
+                              'Accedi',
                               style: TextStyle(
                                 color: Color(0xFF667EEA),
                                 fontWeight: FontWeight.w600,
