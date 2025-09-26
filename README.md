@@ -141,22 +141,8 @@ flutter test
 
 ## 📱 Preview Applicazione
 
-### 📁 Struttura Assets Media
-Per aggiungere screenshot e GIF al README, organizza i file nella seguente struttura:
-
-```
-docs/
-├── screenshots/          # Screenshot delle schermate
-│   ├── login_screen.png
-│   ├── signup_screen.png
-│   ├── home_screen.png
-│   ├── transports_screen.png
-│   ├── profile_screen.png
-│   └── edit_profile_screen.png
-```
-
 ### Video Demo
-[![Video Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://youtu.be/YOUR_VIDEO_ID)
+[Video Demo](https://drive.google.com/file/d/1X1VSq9ioD_AwideRlkSMd2ciTFxYQ_CM/view?usp=drive_link)
 *Video dimostrativo completo delle funzionalità dell'app*
 
 ### Screenshots
@@ -166,28 +152,12 @@ docs/
 |:---------------:|:-----------------------:|:--------------:|
 | ![Login](assets/screenshots/login_screen.png) | ![Signup](assets/screenshots/signup_screen.png) | ![Home](assets/screenshots/home_screen.png) |
 
-| Schermata Trasporti | Schermata Profilo | Schermata Modifica |
+| Schermata Bus Routes | Schermata Profilo | Schermata Modifica |
 |:-------------------:|:-----------------:|:------------------:|
 | ![Transports](assets/screenshots/transports_screen.png) | ![Profile](assets/screenshots/profile_screen.png) | ![Edit](assets/screenshots/edit_profile_screen.png) |
 
 </div>
 
-### GIF Animazioni
-<div align="center">
-
-#### Navigazione App
-![App Navigation](docs/gifs/app_navigation.gif)
-*Navigazione tra le schermate principali*
-
-#### Ricerca Trasporti
-![Transport Search](docs/gifs/transport_search.gif)
-*Ricerca e filtraggio dei trasporti disponibili*
-
-#### Gestione Utente
-![User Management](docs/gifs/user_management.gif)
-*Registrazione, login e modifica profilo*
-
-</div>
 
 ## 🛠️ Tecnologie Utilizzate
 
